@@ -40,9 +40,9 @@ public class Patient {
     private float temperature;
 
     // Constructor
-    public Patient(int airOrOxygenValue, int conciousnessValue, int respirationRange, int sp02, float temperature) {
+    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, float temperature) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
-        this.conciousness = conciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
+        this.conciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
         this.sp02 = sp02;
         this.temperature = temperature;
@@ -52,7 +52,7 @@ public class Patient {
         return airOrOxygen;
     }
 
-    public Consciousness getConciousness() {
+    public Consciousness getConsciousness() {
         return conciousness;
     }
 
@@ -70,12 +70,46 @@ public class Patient {
 
     public int getScore(){
         int score = 0;
-        if (this.conciousness == Consciousness.CVPU){
-            score += 3;
-        }
+        // Air/Oxygen scoring
         if (this.airOrOxygen == AirOrOxygen.OXYGEN){
             score += 2;
         }
+        if (this.conciousness == Consciousness.CVPU){
+            score += 3;
+        }
+
+        // Respiration range scoring
+        if (respirationRange <= 8) {
+            score += 3;
+        } else if (respirationRange <= 11) {
+            score += 1;
+        } else if (respirationRange >= 21 && respirationRange <= 24) {
+            score += 1;
+        } else if (respirationRange >= 25) {
+            score += 3;
+        }
+
+        // Sp02 scoring
+        if (sp02 <= 83) {
+            score += 3;
+        } else if (sp02 <= 85) {
+            score += 2;
+        } else if (sp02 <= 87) {
+            score += 1;
+        } else if (sp02 >= 93) {
+            // Checks if patient is on oxygen
+            if (this.airOrOxygen == AirOrOxygen.OXYGEN) {
+                if (sp02 >= 97) {
+                    score += 3;
+                } else if (sp02 <= 94) {
+                    score += 1;
+                } else {
+                    score += 2;
+                }
+            }
+        }
+        // Temperature scoring
+
         return score;
     }
 }
