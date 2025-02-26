@@ -1,3 +1,5 @@
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 public class Mediscore {
     public enum AirOrOxygen {
         AIR(0), OXYGEN(2);

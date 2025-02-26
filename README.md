@@ -45,6 +45,19 @@ Typical scores range from 0 to 14.
   - 36.1–38.0: 0 points 
   - 38.1–39.0: 1 point 
   - ≥39.1: 3 points
+#### Bonus problem breakdown
+For this problem, I must be able to somehow track the time to know when the last reading was.
+A solution could be to either have an array that stores the time, along with the other stats and have these extracted to
+be analysed by the program. Another possible solution, albeit slightly harder to execute, to have a database that would 
+use the patient's ID or number as primary key and store the stats periodically.
+
+For this problem it is specified that the time of monitoring varies between patients depending on the condition so the 
+program must adjust to that. This will involve calculations of how long it has passed since the last reading, 24 hours 
+for the alerting trends point, then 2 hours for the CBG. There must be a way to identify and compare the readings from
+24hr and 2hrs ago reliably.
+
+Database use seems to be ideal as it is more robust and would make more sense to include in a real world scenario.
+
 ## Notes
 * NEWS2 stands for National Early Warning Score 2, a tool used to assess how likely a patient is to deteriorate. 
 It's used in the NHS to identify patients who are acutely ill.
