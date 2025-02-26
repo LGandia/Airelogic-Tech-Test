@@ -1,5 +1,5 @@
 public class Patient {
-    enum AirOrOxygen {
+    public enum AirOrOxygen {
         AIR(0), OXYGEN(2);
 
         // Constructor
@@ -15,7 +15,7 @@ public class Patient {
         }
     }
 
-    enum Consciousness {
+    public enum Consciousness {
         ALERT(0), CVPU(1);
         // Constructor
         private final int value;
@@ -33,16 +33,16 @@ public class Patient {
     }
 
     // Attributes
-    private AirOrOxygen airOrOxygen;
-    private Consciousness conciousness;
-    private int respirationRange;
-    private int sp02;
-    private float temperature;
+    private final AirOrOxygen airOrOxygen;
+    private final Consciousness consciousness;
+    private final int respirationRange;
+    private final int sp02;
+    private final float temperature;
 
     // Constructor
     public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
-        this.conciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
+        this.consciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
         this.sp02 = sp02;
         // Temperature - Round to 1 decimal place, allows int/double to be inputted
@@ -54,7 +54,7 @@ public class Patient {
     }
 
     public Consciousness getConsciousness() {
-        return conciousness;
+        return consciousness;
     }
 
     public int getRespirationRange() {
@@ -71,7 +71,11 @@ public class Patient {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Air or Oxygen: " + airOrOxygen + "\n" +
+                "Consciousness: " + consciousness + "\n" +
+                "Respiration Range: " + respirationRange + "\n" +
+                "SpO2: " + sp02 + "\n" +
+                "Temperature: " + temperature;
     }
 
     public int getScore(){
@@ -80,7 +84,7 @@ public class Patient {
         if (this.airOrOxygen == AirOrOxygen.OXYGEN){
             score += 2;
         }
-        if (this.conciousness == Consciousness.CVPU){
+        if (this.consciousness == Consciousness.CVPU){
             score += 3;
         }
 
