@@ -7,6 +7,9 @@
 
 **Deadline:** 05/02/2025
 
+Please note: Patient.java is a fully working file with a basic solution,
+Mediscore.java is the exact same file but with the BONUS task.
+
 ## Task analysis
 ### Abstraction of the problem
 An aggregate scoring system of the following: respiration rate, oxygen saturation, level of consciousness/new confusion
