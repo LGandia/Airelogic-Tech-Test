@@ -77,6 +77,9 @@ public class Patient {
                 "SpO2: " + sp02 + "\n" +
                 "Temperature: " + temperature;
     }
+    public void displayStats(){
+        System.out.println(toString());
+    }
 
     public int getScore(){
         int score = 0;

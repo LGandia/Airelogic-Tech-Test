@@ -18,14 +18,20 @@ public class Driver {
         // patient4 should give a scoring of 13
         Patient patient5 = new Patient(2, 3, 25, 95, 30.0);
 
-        //patient0 stats
-        System.out.println("Air or Oxygen: " + patient0.getAirOrOxygen());
-        System.out.println("Consciousness: " + patient0.getConsciousness());
-        System.out.println("Respiration Range: " + patient0.getRespirationRange());
-        System.out.println("SpO2: " + patient0.getSp02());
-        System.out.println("Temperature: " + patient0.getTemperature());
+        // patient0 stats
+        System.out.println("\n=====Patient 0 all stats=====");
+        patient0.displayStats();
+
+        // display stats individually
+        System.out.println("\n=====Patient individual scores=====");
+        System.out.println("Patient 3 air/oxygen: "+ patient3.getAirOrOxygen() );
+        System.out.println("Patient 1 temperature: "+ patient1.getTemperature() );
+        System.out.println("Patient 5 SPO2: "+ patient5.getSp02() );
+        System.out.println("Patient 4 respiration range: " + patient4.getRespirationRange());
+        System.out.println("Patient 2 consciousness : " + patient2.getConsciousness());
 
         // Scores
+        System.out.println("\n=====Patient scores=====");
         System.out.println("Patient 0 Score: " + patient0.getScore());
         System.out.println("Patient 1 Score: " + patient1.getScore());
         System.out.println("Patient 2 Score: " + patient2.getScore());
