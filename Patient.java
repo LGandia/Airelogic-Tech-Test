@@ -1,7 +1,6 @@
 public class Patient {
     enum AirOrOxygen {
-        AIR(0),
-        OXYGEN(2);
+        AIR(0), OXYGEN(2);
 
         // Constructor
         private final int value;
@@ -18,7 +17,6 @@ public class Patient {
 
     enum Consciousness {
         ALERT(0), CVPU(1);
-
         // Constructor
         private final int value;
 
@@ -31,15 +29,7 @@ public class Patient {
             return value;
         }
 
-        // Method to return whether the patient is conscious or alert
-        public static Consciousness getConciousness(int value) {
-            // if value is 0, then ALERT is returned, else CVPU is returned
-            if (value == 0) {
-                return ALERT;
-            } else {
-                return CVPU;
-            }
-        }
+
     }
 
     // Attributes
@@ -50,13 +40,12 @@ public class Patient {
     private float temperature;
 
     // Constructor
-    public Patient(AirOrOxygen airOrOxygen, Consciousness conciousness, int respirationRange, int sp02, float temperature) {
-        this.airOrOxygen = airOrOxygen;
-        this.conciousness = conciousness;
+    public Patient(int airOrOxygenValue, int conciousnessValue, int respirationRange, int sp02, float temperature) {
+        this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
+        this.conciousness = conciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
         this.sp02 = sp02;
         this.temperature = temperature;
-
     }
     // Getters
     public AirOrOxygen getAirOrOxygen() {
@@ -77,5 +66,16 @@ public class Patient {
 
     public float getTemperature() {
         return temperature;
+    }
+
+    public int getScore(){
+        int score = 0;
+        if (this.conciousness == Consciousness.CVPU){
+            score += 3;
+        }
+        if (this.airOrOxygen == AirOrOxygen.OXYGEN){
+            score += 2;
+        }
+        return score;
     }
 }
