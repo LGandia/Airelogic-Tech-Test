@@ -1,4 +1,4 @@
-public class patient {
+public class Patient {
     private enum AirOrOxygen{
         AIR(0),
         OXYGEN(2);
@@ -38,4 +38,9 @@ public class patient {
             }
         }
     }
+
+    private int RespirationRange;
+    private int Sp02;
+    private float temperature;
+
 }
