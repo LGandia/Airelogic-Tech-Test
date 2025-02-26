@@ -8,14 +8,25 @@
 **Deadline:** 05/02/2025
 
 ## Task analysis
+### Abstraction of the problem
+An aggregate scoring system of the following: respiration rate, oxygen saturation, level of consciousness/new confusion
+and temperature. A score is allocated to each of these which then determines how ill someone is based on the deviation 
+from expected (normal) values.
 
+All the scores are added together, and 2 additional points may be added for patients requiring supplemental oxygen.
+Typical scores range from 0 to 14.
+
+## Notes
+* NEWS2 stands for National Early Warning Score 2, a tool used to assess how likely a patient is to deteriorate. 
+It's used in the NHS to identify patients who are acutely ill.
 
 # Task
 ## Medi Score Calculation
 
 ### Background
 
-Write a function to calculate the score for a patient. This is a simple rule-of-thumb score used to identify ill patients.
+Write a function to calculate the score for a patient. This is a simple rule-of-thumb score used to identify ill 
+patients.
 
 ### Introduction
 
