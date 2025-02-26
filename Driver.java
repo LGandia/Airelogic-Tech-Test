@@ -1,22 +1,22 @@
 public class Driver {
     public static void main(String[] args) {
         // patient should give a scoring of 0
-        Patient patient0 = new Patient(0, 0, 20, 90, 37.5f);
+        Patient patient0 = new Patient(0, 0, 20, 90, 37);
 
         // patient1 should give a scoring of 2
-        Patient patient1 = new Patient(2, 0, 20, 90, 37.5f);
+        Patient patient1 = new Patient(2, 0, 20, 90, 37.5);
 
         // patient2 should give a scoring of 5
-        Patient patient2 = new Patient(2, 1, 20, 90, 37.5f);
+        Patient patient2 = new Patient(2, 1, 20, 90, 37.5);
 
         // patient3 should give a scoring of 8
-        Patient patient3 = new Patient(2, 3, 7, 90, 37.5f);
+        Patient patient3 = new Patient(2, 3, 7, 90, 37.5);
 
         // patient4 should give a scoring of 10
-        Patient patient4 = new Patient(2, 3, 25, 95, 37.5f);
+        Patient patient4 = new Patient(2, 3, 25, 95, 37.5);
 
         // patient4 should give a scoring of 13
-        Patient patient5 = new Patient(2, 3, 25, 95, 30.0f);
+        Patient patient5 = new Patient(2, 3, 25, 95, 30.0);
 
         //patient0 stats
         System.out.println("Air or Oxygen: " + patient0.getAirOrOxygen());

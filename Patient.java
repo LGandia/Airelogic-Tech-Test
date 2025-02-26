@@ -40,12 +40,13 @@ public class Patient {
     private float temperature;
 
     // Constructor
-    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, float temperature) {
+    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
         this.conciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
         this.sp02 = sp02;
-        this.temperature = temperature;
+        // Temperature - Round to 1 decimal place, allows int/double to be inputted
+        this.temperature = Math.round((float) temperature * 10) / 10.0f;
     }
     // Getters
     public AirOrOxygen getAirOrOxygen() {
@@ -66,6 +67,11 @@ public class Patient {
 
     public float getTemperature() {
         return temperature;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
     public int getScore(){
@@ -109,6 +115,15 @@ public class Patient {
             }
         }
         // Temperature scoring
+        if (this.temperature <= 35.0){
+            score += 3;
+        }else if (this.temperature <= 36.0){
+            score += 1;
+        }else if (this.temperature >= 38.1 && this.temperature <= 39.0){
+            score += 1;
+        }else {
+            score += 3;
+        }
 
         return score;
     }
