@@ -127,8 +127,8 @@ public class Patient {
             score += 1;
             respirationScore += 1;
         } else if (respirationRange >= 21 && respirationRange <= 24) {
-            score += 1;
-            respirationScore += 1;
+            score += 2;
+            respirationScore += 2;
         } else if (respirationRange >= 25) {
             score += 3;
             respirationScore += 3;

@@ -20,8 +20,8 @@ public class Driver {
 
         // README patients
         Patient READMEpatient1 = new Patient(0,0,15,95,37.1); // 0
-        Patient READMEpatient2 = new Patient(2,0,17,95,37.1); // 2
-        Patient READMEpatient3 = new Patient(2,1,23,88,38.5); // 3
+        Patient READMEpatient2 = new Patient(2,0,17,95,37.1); // 4
+        Patient READMEpatient3 = new Patient(2,1,23,88,38.5); // 8
 
         // patient0 stats
         System.out.println("\n=====Patient 0 all stats=====");
