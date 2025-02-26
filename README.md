@@ -16,6 +16,32 @@ from expected (normal) values.
 All the scores are added together, and 2 additional points may be added for patients requiring supplemental oxygen.
 Typical scores range from 0 to 14.
 
+- AIR or OXYGEN:
+    - Air: 0 points
+    - Oxygen: 2 points
+- Consciousness:
+  - ALERT (0 points)
+  - CVPU (3 points)
+- Respiration Range:
+  - ≤8: 3 points 
+  - 9–11: 1 point 
+  - 12–20: 0 points 
+  - 21–24: 1 point 
+  - ≥25: 3 points
+- SpO2:
+  - ≤83: 3 points 
+  - 84–85: 2 points 
+  - 86–87: 1 point 
+  - 88–92: 0 points 
+  - 93–94 on oxygen: 1 point 
+  - 95–96 on oxygen: 2 points 
+  - ≥97 on oxygen: 3 points
+- Temperature:
+  - ≤35.0: 3 points 
+  - 35.1–36.0: 1 point 
+  - 36.1–38.0: 0 points 
+  - 38.1–39.0: 1 point 
+  - ≥39.1: 3 points
 ## Notes
 * NEWS2 stands for National Early Warning Score 2, a tool used to assess how likely a patient is to deteriorate. 
 It's used in the NHS to identify patients who are acutely ill.

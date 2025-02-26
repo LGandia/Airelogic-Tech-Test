@@ -18,6 +18,11 @@ public class Driver {
         // patient4 should give a scoring of 13
         Patient patient5 = new Patient(2, 3, 25, 95, 30.0);
 
+        // README patients
+        Patient READMEpatient1 = new Patient(0,0,15,95,37.1); // 0
+        Patient READMEpatient2 = new Patient(2,0,17,95,37.1); // 2
+        Patient READMEpatient3 = new Patient(2,1,23,88,38.5); // 3
+
         // patient0 stats
         System.out.println("\n=====Patient 0 all stats=====");
         patient0.displayStats();
@@ -38,5 +43,15 @@ public class Driver {
         System.out.println("Patient 3 Score: " + patient3.getScore());
         System.out.println("Patient 4 Score: " + patient4.getScore());
         System.out.println("Patient 5 Score: " + patient5.getScore());
+
+        // README scores
+        System.out.println("\n===== README Patient scores=====");
+        System.out.println("Patient 1 Score: " + READMEpatient1.getScore());
+        System.out.println("Patient 2 Score: " + READMEpatient2.getScore());
+        System.out.println("Patient 3 Score: " + READMEpatient3.getScore());
+
+        READMEpatient1.displayStats();
+        READMEpatient2.displayStats();
+        READMEpatient3.displayStats();
     }
 }
