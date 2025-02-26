@@ -1,11 +1,23 @@
-# Airelogic-Tech-Test
-# Medi Score Calculation
+# Airelogic Technical Test
+**Name:** Laura Gandia Garcia-Morales
 
-## Background
+**University:** Leeds Beckett University
+
+**Start date:** 26/02/2025
+
+**Deadline:** 05/02/2025
+
+## Task analysis
+
+
+# Task
+## Medi Score Calculation
+
+### Background
 
 Write a function to calculate the score for a patient. This is a simple rule-of-thumb score used to identify ill patients.
 
-## Introduction
+### Introduction
 
 The Medi Score is a simple aggregate scoring system created for this test based on other scores used widely 
 in healthcare in which a score is calculated based on patients' physiological measurements. 
@@ -26,7 +38,7 @@ The scores for each property are added together, and 2 additional points are add
 supplemental oxygen to maintain their oxygen saturation level. This final sum is the Medi score, which ranges from
 0 to 14.
 
-## Application Requirements
+### Application Requirements
 
 The Medi score for a patient is the **sum** of the scores for each property in the following table. Ranges are inclusive.
 
@@ -55,11 +67,11 @@ The values of the observations will be the following data types:
 | SpO<sub>2</sub>         | Integer        |                                                   |
 | Temperature             | Float          | This should be rounded to a single decimal place. |
 
-## Examples
+### Examples
 
 Here are some examples of patients and their Medi scores.
 
-### Patient 1
+#### Patient 1
 
 | Property                | Observation | Score | Comment                                                                  |
 | ----------------------- | ----------- | ----- | ------------------------------------------------------------------------ |
@@ -71,7 +83,7 @@ Here are some examples of patients and their Medi scores.
 
 This patient's final Medi score is **0**.
 
-### Patient 2
+#### Patient 2
 
 | Property                | Observation | Score | Comment                                               |
 | ----------------------- | ----------- | ----- | ----------------------------------------------------- |
@@ -83,7 +95,7 @@ This patient's final Medi score is **0**.
 
 This patient's final Medi score is **4**.
 
-### Patient 3
+#### Patient 3
 
 | Property                | Observation | Score | Comment                                                             |
 | ----------------------- | ----------- | ----- | ------------------------------------------------------------------- |
@@ -95,7 +107,7 @@ This patient's final Medi score is **4**.
 
 This patient's final Medi score is **8**.
 
-## Bonus 
+### Bonus 
 
 If you've completed the Medi score calculation and feel you have enough time left to spend then please attempt to solve any of the following issues, you will need additional fields in the input to satisfy these requirements:
 
