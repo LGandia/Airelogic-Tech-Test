@@ -1,4 +1,4 @@
-class patient {
+public class patient {
     private enum AirOrOxygen{
         AIR(0),
         OXYGEN(2);
