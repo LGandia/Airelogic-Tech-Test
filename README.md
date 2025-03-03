@@ -57,7 +57,7 @@ program must adjust to that. This will involve calculations of how long it has p
 for the alerting trends point, then 2 hours for the CBG. There must be a way to identify and compare the readings from
 24hr and 2hrs ago reliably.
 
-For simplicity, I will attempt to use a file structure rather than an actual database, due to having to install and
+For simplicity, I will to use an array rather than an actual database, due to having to install and
 manage Database server, along with dependencies.
 
 ## Notes
