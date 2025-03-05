@@ -257,4 +257,7 @@ public class Patient {
         return false;
     }
 
+    public void addRecordManually(int score, LocalDateTime timestamp){
+        records.add(new PatientRecord(score,timestamp));
+    }
 }
