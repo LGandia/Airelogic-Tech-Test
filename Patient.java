@@ -255,14 +255,19 @@ public class Patient {
                 }
             }
         }
+        records.add(new PatientRecord(score, LocalDateTime.now()));
         return score;
     }
 
     // Record
-    private final List<PatientRecord> records = new ArrayList<>();
-    private record PatientRecord (int score, LocalDateTime timestamp){
+    final List<PatientRecord> records = new ArrayList<>();
+    record PatientRecord (int score, LocalDateTime timestamp){
     }
 
+    public void addRecordManually(LocalDateTime timestamp){
+        int currentScore = getScore();
+        records.add(new PatientRecord(currentScore,timestamp));
+    }
 
     public boolean isScoreUp(){
         if (records.size() < 2){ return false;}
@@ -281,9 +286,5 @@ public class Patient {
             }
         }
         return false;
-    }
-
-    public void addRecordManually(int score, LocalDateTime timestamp){
-        records.add(new PatientRecord(score,timestamp));
     }
 }

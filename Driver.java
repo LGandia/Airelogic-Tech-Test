@@ -62,13 +62,28 @@ public class Driver {
         System.out.println("Patient CBG score: " + patient9.getScore());
 
         //24 hour warning
-        Patient patientTime = new Patient(0,0,12,95,37.5, 5.0, false);
-        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(25));
-        patientTime.
-        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(20));
-        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(10));
-        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(5));
-        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now());
+        Patient patientTime = new Patient(0, 0, 12, 95, 37.5, 5.0, false);
 
+        // Add records with specific timestamps and current score
+        patientTime.addRecordManually(LocalDateTime.now().minusHours(25));
+        patientTime.addRecordManually(LocalDateTime.now().minusHours(20));
+
+        // Change attributes and add more records
+        patientTime.setAirOrOxygen(Patient.AirOrOxygen.AIR);
+        patientTime.addRecordManually(LocalDateTime.now().minusHours(15));
+        patientTime.addRecordManually(LocalDateTime.now().minusHours(10));
+        patientTime.addRecordManually(LocalDateTime.now().minusHours(5));
+        patientTime.addRecordManually(LocalDateTime.now());
+
+        // Print the records for verification
+        System.out.println("Patient Records:");
+        for (int i = 0; i < patientTime.records.size(); i++) {
+            Patient.PatientRecord record = patientTime.records.get(i);
+            System.out.println("Score: " + record.score() + ", Timestamp: " + record.timestamp());
+        }
+
+        // Check if the score is trending up in the last 24 hours
+        boolean isTrendingUp = patientTime.isScoreUp();
+        System.out.println("Is the score trending up in the last 24 hours? " + isTrendingUp);
     }
 }
