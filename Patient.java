@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Patient {
     public enum AirOrOxygen {
         AIR(0), OXYGEN(2);
@@ -38,20 +40,25 @@ public class Patient {
     private final int respirationRange;
     private final int sp02;
     private final float temperature;
+    private final Float cbg;
+    private final Boolean isFasting;
 
     public int oxygenScore = 0;
     public int consciousnessScore = 0;
     public int respirationScore = 0;
     public int sp02Score = 0;
     public int temperatureScore = 0;
+    public int cbgScore = 0;
     // Constructor
-    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature) {
+    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature, Float cbg, Boolean isFasting) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
         this.consciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
         this.sp02 = sp02;
         // Temperature - Round to 1 decimal place, allows int/double to be inputted
         this.temperature = Math.round((float) temperature * 10) / 10.0f;
+        this.cbg = cbg;
+        this.isFasting = isFasting;
     }
     // Getters
     public AirOrOxygen getAirOrOxygen() {
@@ -73,6 +80,12 @@ public class Patient {
     public float getTemperature() {
         return temperature;
     }
+    public float getCBG(){
+        return cbg;
+    }
+    public boolean getIsFasting(){
+        return isFasting;
+    }
     // Scores
     public int getOxygenScore() {
         return oxygenScore;
@@ -93,6 +106,9 @@ public class Patient {
     public int getTemperatureScore() {
         return temperatureScore;
     }
+    public int getCbgScore(){
+        return cbgScore
+    }
 
     @Override
     public String toString() {
@@ -100,7 +116,9 @@ public class Patient {
                 "Consciousness: " + consciousness + " Points: " + consciousnessScore + "\n" +
                 "Respiration Range: " + respirationRange + " Points: " + respirationScore + "\n" +
                 "SpO2: " + sp02 + " Points: " + sp02Score + "\n" +
-                "Temperature: " + temperature + " Points: " + temperatureScore;
+                "Temperature: " + temperature + " Points: " + temperatureScore + "\n"+
+                "Capillary Blood Glucose: " + (cbg != null ? cbg: "N/A")+"Points: "+cbgScore+"n"+
+                "Is Fasting: "+(isFasting != null ? isFasting : "N/A");
     }
     public void displayStats(){
         System.out.println(toString());
@@ -177,4 +195,5 @@ public class Patient {
 
         return score;
     }
+
 }
