@@ -193,18 +193,36 @@ public class Patient {
             temperatureScore += 3;
         }
 
-        if (isFasting){
-            if (cbg <= 3.4) cbgScore = 3; score += 3;
-            else if (cbg <= 3.9) cbgScore = 2; score += 2;
-            else if (cbg >= 6.0) cbgScore = 3; score += 3;
-            else if (cbg >= 5.5) cbgScore = 2; score += 2;
-        }else {
-            if (cbg <= 4.5){ cbgScore = 3; score += 3;}
-            else if (cbg <= 5.8){ cbgScore = 2; score += 2;}
-            else if (cbg >= 9.0){ cbgScore = 3; score += 3;}
-            else if (cbg >= 7.9){ cbgScore = 2; score += 2;}
+        if (cbg != null && isFasting != null) {
+            if (isFasting) {
+                if (cbg <= 3.4){
+                    cbgScore = 3;
+                    score += 3;
+                } else if (cbg <= 3.9){
+                    cbgScore = 2;
+                    score += 2;
+                } else if (cbg >= 6.0){ cbgScore = 3;
+                score += 3;
+                } else if (cbg >= 5.5){
+                    cbgScore = 2;
+                    score += 2;
+                }
+            } else {
+                if (cbg <= 4.5) {
+                    cbgScore = 3;
+                    score += 3;
+                } else if (cbg <= 5.8) {
+                    cbgScore = 2;
+                    score += 2;
+                } else if (cbg >= 9.0) {
+                    cbgScore = 3;
+                    score += 3;
+                } else if (cbg >= 7.9) {
+                    cbgScore = 2;
+                    score += 2;
+                }
+            }
         }
-
         return score;
     }
 
