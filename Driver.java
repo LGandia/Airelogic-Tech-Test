@@ -50,6 +50,8 @@ public class Driver {
         System.out.println("Patient 2 Score: " + READMEpatient2.getScore());
         System.out.println("Patient 3 Score: " + READMEpatient3.getScore());
 
+        Patient patient9 = new Patient(2, 1, 20, 90, 37.5, 3.9, false);
+
         READMEpatient1.displayStats();
         READMEpatient2.displayStats();
         READMEpatient3.displayStats();

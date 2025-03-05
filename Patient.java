@@ -40,7 +40,7 @@ public class Patient {
     private final int respirationRange;
     private final int sp02;
     private final float temperature;
-    private final Float cbg;
+    private final Double cbg;
     private final Boolean isFasting;
 
     public int oxygenScore = 0;
@@ -51,7 +51,7 @@ public class Patient {
     public int cbgScore = 0;
 
     // Constructors
-    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature, Float cbg, Boolean isFasting) {
+    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature, Double cbg, Boolean isFasting) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
         this.consciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
         this.respirationRange = respirationRange;
@@ -84,7 +84,7 @@ public class Patient {
     public float getTemperature() {
         return temperature;
     }
-    public float getCBG(){
+    public double getCBG(){
         return cbg;
     }
     public boolean getIsFasting(){
