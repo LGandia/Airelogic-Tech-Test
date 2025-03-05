@@ -107,7 +107,7 @@ public class Patient {
         return temperatureScore;
     }
     public int getCbgScore(){
-        return cbgScore
+        return cbgScore;
     }
 
     @Override
@@ -191,6 +191,18 @@ public class Patient {
         }else if (this.temperature  >= 39.1){
             score += 3;
             temperatureScore += 3;
+        }
+
+        if (isFasting){
+            if (cbg <= 3.4) cbgScore = 3; score += 3;
+            else if (cbg <= 3.9) cbgScore = 2; score += 2;
+            else if (cbg >= 6.0) cbgScore = 3; score += 3;
+            else if (cbg >= 5.5) cbgScore = 2; score += 2;
+        }else {
+            if (cbg <= 4.5){ cbgScore = 3; score += 3;}
+            else if (cbg <= 5.8){ cbgScore = 2; score += 2;}
+            else if (cbg >= 9.0){ cbgScore = 3; score += 3;}
+            else if (cbg >= 7.9){ cbgScore = 2; score += 2;}
         }
 
         return score;
