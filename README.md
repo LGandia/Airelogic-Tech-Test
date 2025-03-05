@@ -57,6 +57,12 @@ for the alerting trends point, then 2 hours for the CBG. There must be a way to 
 For simplicity, I will to use an array rather than an actual database, due to having to install and
 manage Database server, along with dependencies.
 
+After some trial and error, I managed to include the CBG scoring system, and possibly implement the 24-hour detection
+system. However, I am unsure if it is working since I am not fully familiar with the date/time library in java. The code
+creates a record with a time stamp, which in a real setting should work as it goes updating and comparing the real-time 
+hours for each patient. The CBG is based on recording whether the patient is fasting or not rather than the time variable
+given since I was not able to get the time library to work as I wanted, and so depends on a boolean.
+
 ## Notes
 * NEWS2 stands for National Early Warning Score 2, a tool used to assess how likely a patient is to deteriorate. 
 It's used in the NHS to identify patients who are acutely ill.
