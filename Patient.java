@@ -49,7 +49,8 @@ public class Patient {
     public int sp02Score = 0;
     public int temperatureScore = 0;
     public int cbgScore = 0;
-    // Constructor
+
+    // Constructors
     public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature, Float cbg, Boolean isFasting) {
         this.airOrOxygen = airOrOxygenValue == 0 ? AirOrOxygen.AIR : AirOrOxygen.OXYGEN;
         this.consciousness = consciousnessValue == 0 ? Consciousness.ALERT : Consciousness.CVPU;
@@ -60,7 +61,10 @@ public class Patient {
         this.cbg = cbg;
         this.isFasting = isFasting;
     }
-    // Getters
+    public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature) {
+        this(airOrOxygenValue, consciousnessValue, respirationRange, sp02, temperature, null, null);
+    }
+        // Getters
     public AirOrOxygen getAirOrOxygen() {
         return airOrOxygen;
     }
