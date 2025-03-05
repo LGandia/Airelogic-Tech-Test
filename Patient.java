@@ -121,7 +121,7 @@ public class Patient {
                 "Respiration Range: " + respirationRange + " Points: " + respirationScore + "\n" +
                 "SpO2: " + sp02 + " Points: " + sp02Score + "\n" +
                 "Temperature: " + temperature + " Points: " + temperatureScore + "\n"+
-                "Capillary Blood Glucose: " + (cbg != null ? cbg: "N/A")+"Points: "+cbgScore+"n"+
+                "Capillary Blood Glucose: " + (cbg != null ? cbg: "N/A") + " Points: "+cbgScore+"\n"+
                 "Is Fasting: "+(isFasting != null ? isFasting : "N/A");
     }
     public void displayStats(){
