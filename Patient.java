@@ -37,7 +37,7 @@ public class Patient {
     }
 
     // Attributes
-    private final AirOrOxygen airOrOxygen;
+    private AirOrOxygen airOrOxygen;
     private final Consciousness consciousness;
     private final int respirationRange;
     private final int sp02;
@@ -66,7 +66,33 @@ public class Patient {
     public Patient(int airOrOxygenValue, int consciousnessValue, int respirationRange, int sp02, double temperature) {
         this(airOrOxygenValue, consciousnessValue, respirationRange, sp02, temperature, null, null);
     }
-        // Getters
+    // Setters
+    public void setAirOrOxygen(AirOrOxygen airOrOxygen) {
+        airOrOxygen = this.airOrOxygen;
+    }
+
+    public void setConsciousness( Consciousness consciousness) {
+        consciousness = this.consciousness;
+    }
+
+    public void setRespirationRange(int respirationRange) {
+        respirationRange = this.respirationRange;
+    }
+
+    public void setSp02(int sp02) {
+        sp02 = this.sp02;
+    }
+
+    public void setTemperature(float temperature) {
+        temperature = this.temperature;
+    }
+    public void setCBG( double cbg ){
+        cbg = this.cbg;
+    }
+    public void setIsFasting( boolean isFasting){
+         isFasting = this.isFasting;
+    }
+    // Getters
     public AirOrOxygen getAirOrOxygen() {
         return airOrOxygen;
     }

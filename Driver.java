@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Driver {
     public static void main(String[] args) {
         // patient should give a scoring of 0
@@ -58,5 +60,15 @@ public class Driver {
         Patient patient9 = new Patient(2, 1, 20, 90, 37.5, 3.9, false);
         patient9.displayStats();
         System.out.println("Patient CBG score: " + patient9.getScore());
+
+        //24 hour warning
+        Patient patientTime = new Patient(0,0,12,95,37.5, 5.0, false);
+        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(25));
+        patientTime.
+        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(20));
+        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(10));
+        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now().minusHours(5));
+        patientTime.addRecordManually(patientTime.getScore(), LocalDateTime.now());
+
     }
 }
