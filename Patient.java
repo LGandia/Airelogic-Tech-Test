@@ -1,4 +1,6 @@
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Patient {
     public enum AirOrOxygen {
@@ -228,6 +230,31 @@ public class Patient {
             }
         }
         return score;
+    }
+
+    // Record
+    private final List<PatientRecord> records = new ArrayList<>();
+    private record PatientRecord (int score, LocalDateTime timestamp){
+    }
+
+
+    public boolean isScoreUp(){
+        if (records.size() < 2){ return false;}
+
+        LocalDateTime now = LocalDateTime.now();
+        int latestScore = records.get(records.size() - 1).score();
+
+        for (int i = records.size() - 2; i >= 0; i--){
+            PatientRecord record = records.get(i);
+            if (record.timestamp().isAfter(now.minusHours(24))){
+                if ((latestScore - record.score) > 2){
+                    return true;
+                }
+            }else {
+                break;
+            }
+        }
+        return false;
     }
 
 }
